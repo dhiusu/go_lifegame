@@ -84,6 +84,8 @@ func main() {
 		}
 	}
 
+	generation := 1
+
 	// Loop
 	for {
 
@@ -91,6 +93,9 @@ func main() {
 		for {
 			select {
 			case <-t.C:
+
+				// 世代数を描画
+				fmt.Printf("Generation %d\n", generation)
 
 				// Matrixの描画
 				matrixStr := ""
@@ -264,6 +269,9 @@ func main() {
 					// ゲーム終了
 					break
 				}
+
+				// 世代更新
+				generation++
 
 			}
 		}
